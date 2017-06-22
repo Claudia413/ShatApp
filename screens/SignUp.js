@@ -7,10 +7,12 @@ import {
   KeyboardAvoidingView,
   TouchableHighlight
 } from "react-native";
+import { connect } from "react-redux";
+import loadUser from '../actions/users/load';
 import signUp from "../actions/users/sign-up";
 import styles from "./SignUp.styles";
 
-export default class SignUp extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
 
@@ -37,8 +39,7 @@ export default class SignUp extends Component {
     const newUser = form.getValue();
     if (!newUser) return;
     console.log(newUser);
-    signUp(newUser);
-    this.clearForm();
+    this.props.signUp(newUser);
   }
 
   render() {
@@ -63,8 +64,21 @@ export default class SignUp extends Component {
           >
             <Text style={styles.buttonText}>Sign up</Text>
           </TouchableHighlight>
+
+          <TouchableHighlight
+            style={styles.buttonPrimary}
+            onPress={this.onSubmit}
+            underlayColor="#99d9f4"
+          >
+            <Text style={styles.buttonText}>Sign in</Text>
+          </TouchableHighlight>
+
         </KeyboardAvoidingView>
       </View>
     );
   }
 }
+
+const mapStateToProps = ({ loading }) => ({ loading });
+
+export default connect(mapStateToProps, { signUp })(SignUp);

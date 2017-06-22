@@ -30,4 +30,24 @@ export default StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
+  buttonPrimary: {
+    height: 36,
+    backgroundColor: '#8faed6',
+    borderColor: '#8faed6',
+    borderWidth: 1,
+    borderRadius: 8,
+    marginBottom: 10,
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  },
+  buttonSecondary: {
+    height: 36,
+    backgroundColor: '#8faed6',
+    borderColor: '#8faed6',
+    borderWidth: 1,
+    borderRadius: 8,
+    marginBottom: 10,
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  }
 });

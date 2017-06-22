@@ -1,15 +1,26 @@
-import React from 'react';
+import React from 'react'
+import { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import SignUp from './screens/SignUp'
+import { Provider } from 'react-redux';
+import { Router, Scene } from 'react-native-router-flux';
+import store from './store';
+import SignIn from './screens/SignIn';
+import SignUp from './screens/SignUp';
+import ChatRoom from './screens/ChatRoom';
 import styles from './App.styles';
 
 
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <SignUp />
-      </View>
+      <Provider store={store}>
+        <Router>
+          <Scene key="root">
+            <Scene key="signIn" component={SignIn} title="Sign In" initial={true} />
+            <Scene key="signUp" component={SignUp} title="Sign Up"  />
+          </Scene>
+        </Router>
+      </Provider>
     );
   }
 }
