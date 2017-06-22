@@ -22,8 +22,8 @@ export default StyleSheet.create({
   },
   button: {
     height: 36,
-    backgroundColor: '#48BBEC',
-    borderColor: '#48BBEC',
+    backgroundColor: '#8faed6',
+    borderColor: '#8faed6',
     borderWidth: 1,
     borderRadius: 8,
     marginBottom: 10,

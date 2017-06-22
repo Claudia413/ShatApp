@@ -7,7 +7,7 @@ import {
   KeyboardAvoidingView,
   TouchableHighlight
 } from "react-native";
-
+import signUp from "../actions/users/sign-up";
 import styles from "./SignUp.styles";
 
 export default class SignUp extends Component {
@@ -37,6 +37,7 @@ export default class SignUp extends Component {
     const newUser = form.getValue();
     if (!newUser) return;
     console.log(newUser);
+    signUp(newUser);
     this.clearForm();
   }
 
